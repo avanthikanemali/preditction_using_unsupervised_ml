@@ -1,0 +1,12 @@
+>install.packages("ggplot2")
+>library(ggplot2)
+> data<-iris
+> summary(iris)
+> head(iris)
+> gplot<-ggplot(data, aes(Petal.Length, Petal.Width)) + geom_point(aes(col=Species))
+> print(gplot)
+> noclusters<-kmeans(data[,1:4], center=4, nstart = 22)
+> noclusters
+> table(noclusters$cluster, data$Species)
+> library(cluster)
+> clusplot(iris, noclusters$cluster, color = T, shade = T, lines = 0, labels = 0)
